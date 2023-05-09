@@ -34,6 +34,8 @@
 
 		/* Efeito Parallax
 		-------------------------------*/
+		#myImage{transition: transform 3s }	
+
 		.caixa1, .caixa2, .caixa3, .caixa4 {
 			position: relative;
 			height: 100%;
@@ -44,12 +46,28 @@
 			background-attachment: fixed; 
 		}
 
+		.animação{
+
+			width: 40%;
+			height: 40%;
+			opacity: 0.5;
+			
+		}
+
 		.caixa1 {
+			display: flex;
+			justify-content: center;
+			align-items: center;
 			background-image: url(imagens/imagem1.jpg);
+			text-align: center;
 		}
 
 		.caixa2 {
+			display: flex;
+			justify-content: center;
+			align-items: center;
 			background-image: url(imagens/imagem2.jpg);
+			text-align: center;
 		}
 
 		.caixa3 {
@@ -78,16 +96,18 @@
 		}
 
 	</style>
-
+	
+	
+	
 </head>
 <body>
 
 	<div class="caixa1">
+
 		<div class="conteudo-titulo">
-			<span class="titulo">PASSEIO DE BALÕES</span>
+			<span class="titulo">Passeio de  Balões</span>
 		</div>
 	</div>
-
 	<div class="conteudo">
 		<h3>Parallax</h3>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi consectetur cursus purus eu semper. Quisque viverra sollicitudin tristique. Fusce eget ligula felis. Integer imperdiet, diam vitae mollis commodo, odio mauris imperdiet ante, sed tristique dolor tellus id arcu. Aenean commodo diam id nunc scelerisque, tempor accumsan dolor facilisis. Aliquam nec sapien at ipsum sollicitudin iaculis a at quam. Suspendisse laoreet ligula vel dui porta ullamcorper. Phasellus ultrices sit amet ligula ac lacinia. Aliquam pellentesque leo cursus quam sodales mattis. Aenean nec dignissim elit.</p>
@@ -96,8 +116,11 @@
 	</div>
 
 	<div class="caixa2">
+		<div>
+			<img id="myImage"  class="animação" animation src="imagens/Imagem7.png" alt="">
+		</div>
 		<div class="conteudo-titulo">
-			<span class="titulo">Pegando a estrada</span>
+			<span class="titulo">Passeio no Campo</span>
 		</div>
 	</div>
 
@@ -120,5 +143,45 @@
 		</div>
 	</div>
 
+	<script>
+		const image = document.getElementById('myImage');
+		let lastScrollTop = 0;
+		let currentRotation = 0;
+		let isImageOnScreen = true;
+
+		window.addEventListener('scroll', function() {
+			const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+			const windowHeight = window.innerHeight;
+			const imageRect = image.getBoundingClientRect();
+
+			if (imageRect.top >= windowHeight || imageRect.bottom <= 0) {
+				isImageOnScreen = false;
+			} else {
+				isImageOnScreen = true;
+			}
+
+			if (isImageOnScreen) {
+				if (scrollTop > lastScrollTop) {
+				// rolagem para baixo
+				currentRotation += 2.5;
+				} else if (scrollTop < lastScrollTop) {
+				// rolagem para cima
+				currentRotation -= 2.5;
+				}
+
+				if (currentRotation > 360) {
+				currentRotation -= 360;
+				} else if (currentRotation < 0) {
+				currentRotation += 360;
+				}
+
+				image.style.transform = `rotate(${currentRotation}deg)`;
+			}
+
+			lastScrollTop = scrollTop;
+		});
+
+
+	</script>
 </body>
 </html>
