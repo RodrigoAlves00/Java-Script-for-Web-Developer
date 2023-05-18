@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>        
+        
+        Loops</title>
+	<meta charset="utf-8">
+	<link rel="icon" href="data:image/jpeg;base64,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" />
+	
+	<style type="text/css">
+        
+	</style>
+	<script>
+
+        //\While///
+        var x = 1
+
+        // False ou True é critério de parada.
+        while(x <= 10){
+            document.write(x + '<br />')
+
+            x+= 1
+        }
+
+        while(x <= 10){
+            document.write(x + '<br />')
+            x+=1
+            if(x===5){
+                break // interrompe o laço
+                continue // pula o proximo comando 
+            }
+        }
+
+        //// doWhile /// ---> faz primeiro a instrução e depois verifica
+        do{
+            document.write(x + '<br/>')
+            x+=1
+        }while(x <= 10)
+
+
+        /// FOR/// ESTRUTUO:
+
+        // for(variavel;condição;controle){}
+
+        for(var x=10; x>= 0; x--){
+            document.write(x+ '<br/>')
+        }
+
+        //loops encadeados
+
+        //ex normal tabuada de 1:
+        for(var x=1; x<=10;x++){
+            document.write('1 x '+x +' = ' +(1*x) + '<br/>')
+        }
+
+        
+
+        //ex encadeado tabuada:
+
+        for(var y=1; y<=10;y++){
+            for(var x=1; x<=10;x++){
+            document.write(y+ ' x '+x +' = ' +(y*x) + '<br/>')
+        }
+         document.write('<hr/ > <br/>')
+        }
+        
+
+        //OPERADOR FOR IN:
+        var listaConvidados = Array('Jorge','joeliton','Rodrigo','priscila')
+
+        for(var x in listaConvidados){
+            console.log('índice '+x+' Valor ' + listaConvidados[x])
+        }
+
+        // ForEach (função) *só retorna indices numéricos
+        var lista_de_funcionarios = Array('Love','Juba','jorginho','sabino')
+
+        lista_de_funcionarios.forEach(function(valor, indice, array){
+
+            console.log(valor)
+            console.log(indice + 'indice')
+            console.log(array)
+
+            if(valor == 'Juba'){
+                array[indice] = 'um novo valor'
+            }
+        })
+
+        //ex encadeado tabuada usando While:
+        var t =0
+        while(t<=10){
+            var y = 0
+            while(y<=10){
+                document.write(t+ ' x '+y +' = '+ (t*y ))
+                document.write('<br/>')
+                y++
+            }
+
+            t++
+            document.write('<hr/ > <br/>')
+        }
+
+        
+    </script>
+	
+	
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>Array</title>
+	<meta charset="utf-8">
+	
+	<style type="text/css">
+
+	</style>
+	<script>
+
+        //listas 
+        var listas = Array('banana','maça','abacate','seila')
+        //ou
+        var listas2 = ['5','2',3,4]
+        console.log(listas[0])
+        console.log(listas[1])
+        console.log(listas.length) //quantidade de elementos
+
+
+        //array multidimensional
+
+        var list_multidimensional = Array()
+        //criando índices no array global.
+        list_multidimensional['pessoas'] = Array('eu','tu','nós','vós')
+        list_multidimensional['frutas'] = []
+        list_multidimensional['frutas']['a'] = 'banana'
+        list_multidimensional['frutas']['b'] = 'maça'
+        list_multidimensional['frutas']['c'] = '100'
+        list_multidimensional['frutas']['d'] = 'true'
+
+        console.log(list_multidimensional)
+
+        // teste proximo do python
+
+        list_mult_py = Array(Array(1,2,3,4,5,6),7,8,9,0)
+        console.log(list_mult_py[0])
+        console.log(list_mult_py[2])
+
+
+        //incluindo elementos:
+        // incluindo no ínicio:
+        listas.unshift('uva')
+
+        //incluindo no fim:
+        listas.push('abacate')
+
+        console.log(listas)
+
+        //excluir elemento no final
+        listas.pop()
+        //excluir elemento no incio
+        listas.shift()
+
+        // pesquisa de index dentro do array
+
+        var position = listas.indexOf('maça')
+        var empty =  listas.indexOf('doula')
+        console.log(position) // posição do elemento no array
+        console.log(empty) // caso o elemento não exista dentro do array a função retorna o valor -1
+
+        ////// ORDENANDO ARRAY //////
+        console.log(listas.sort()) //ordenação apenas alfanúmerica
+        console.log(listas2.sort(ordenanumeros)) // ordenação apenas númericos
+
+        function ordenanumeros(a,b){
+            return a-b
+        }  // função padrão para dentro do sort avaliar os a ordem dos números e suas posições
+    </script>
+	
+	
+</head>
+<body>
+
+</body>
+</html>
